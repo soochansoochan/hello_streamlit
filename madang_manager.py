@@ -41,6 +41,7 @@ if len(name) > 0:
               price = tab2.text_input("금액")
               sql = "insert into orders (orderid, custid, bookid, saleprice, orderdate) values (" + str(orderid) + "," + str(custid) + "," + str(bookid) + "," + str(price) + ",'" + dt + "');"
               if tab2.button('거래 입력'):
+                     cursor.execute(sql)
                      dbConn.commit()
                      tab2.write('거래가 입력되었습니다.')
 
